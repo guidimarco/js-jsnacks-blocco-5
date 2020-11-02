@@ -35,8 +35,9 @@ $("document").ready(function() {
         // console.log(currentBike);
 
         // add a position property
-        currentBike.position = "d";
+        currentBike.position = charGenerator();
         // currentBike["position"] = "d"
+
 
         // push in an array
         copyBicycles.push(currentBike);
@@ -52,8 +53,24 @@ $("document").ready(function() {
 
 // <1-fold SSSSS ALL FUNCTION SSSSS
 
-// #2-fold SSSSS region SSSSS
+// #2-fold SSSSS get random integer from min to max SSSSS
+function getRndInteger(min, max) {
+  return Math.floor(Math.random() * (max - min + 1) ) + min;
+}
+// #/2-fold EEEEE get random integer from min to max EEEEE
 
-// #/2-fold EEEEE endregion EEEEE
+// #2-fold SSSSS charter generator SSSSS
+function charGenerator() {
+    // LOCAL VAR
+    var alphabet = "abcdefghijklmnopqrstuvwxyz";
+    // random number from 1 to alphabet.length
+    // - 1 cause i want the index
+    var rndNumber = getRndInteger(1, alphabet.length) - 1;
+    var letter = alphabet[rndNumber]; // random letter
+
+    return letter;
+}
+
+// #/2-fold EEEEE charter generator EEEEE
 
 // </1-fold> EEEEE ALL FUNCTION EEEEE
