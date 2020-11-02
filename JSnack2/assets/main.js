@@ -2,36 +2,43 @@ $("document").ready(function() {
     // PART 1
     // names
     var names = ["Marco", "Francesca", "Francesco", "Antonio", "Carla", "Alberto"];
+    console.log("Insieme di partenza");
     console.log(names);
 
     // PART 2
     // ask and push!
     var userNumbers = [];
 
-    for (var i = 0; i < 2; i++) {
+    for (var i = 0; i < 2; i++) { // ask 2 number
         currentNumber = askANumber(names) - 1; // ask -1 --> cause i want the index
         userNumbers.push(currentNumber); // push
         userNumbers.sort(); // sort the element
     }
     // stamp
+    console.log("Indici scelti dall'utente:");
     console.log(userNumbers);
 
-    // PART 3
-    // new array
-    var newArray = [];
-    for (var i = userNumbers[0]; i <= userNumbers[1]; i++) {
-        newArray.push(names[i]);
-    }
-    // stamp
-    console.log(newArray);
+    // // PART 3 - VERSIONE 1
+    // // new array
+    // var newArray = [];
+    // for (var i = userNumbers[0]; i <= userNumbers[1]; i++) {
+    //     newArray.push(names[i]);
+    // }
+    // // stamp
+    // console.log("Nomi scelti dall'utente:");
+    // console.log(newArray);
 
-    // provare con filter
+    // PART 3 - VERSION 2
+    // filter the names depending on the userNumbers
+    // filter the indexFiltrator function (see below) with userNumbers array argument
+    var filterName = names.filter(indexFiltrator, userNumbers);
+
+    console.log(filterName);
 
 
-    // console.log(names.indexOf("Francesca"));
 
-    // // filter the names depending on the userNumbers (index)
-    // var filterName = names.filter(indexFiltrator(x));
+
+
 
 
 
@@ -59,14 +66,17 @@ function askANumber(array) {
 // #/2-fold EEEEE ask a number from 1 to array.length EEEEE
 
 // #2-fold SSSSS index filtrator SSSSS
-function indexFiltrator(x) {
-    // LOCAL VAR
-    var index = indexOf(x); // return the index
-    var filter; // return "true" if the index is between min and max
+function indexFiltrator(x, i) {
+    // x is the value of the start-array-element
+    // i is the index of the start-array-element
+    // this is the argument --> userNumbers-array-index
 
+    if (i >= this[0] && i <= this[1]) {
+        return true;
+    } else {
+        return false;
+    }
 
-
-    return n;
 };
 // #/2-fold EEEEE index filtrator EEEEE
 
