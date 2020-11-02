@@ -60,7 +60,13 @@ $("document").ready(function() {
     console.log(bicycles);
 
     // stamp the first bike (now it has min weight)
-    console.log("La bici che pesa meno è " + bicycles[0].name + ".");
+    var bikeText = "La bici che pesa meno è " + bicycles[0].name + ".";
+    console.log(bikeText);
+
+    // stamp in HTML --> clone
+    var cloneSpan = $(".template .lighter-bike").clone(); // clone the span
+    cloneSpan.text(bikeText); // insert the text
+    $(".container").append(cloneSpan); // add to container
 
 
 
