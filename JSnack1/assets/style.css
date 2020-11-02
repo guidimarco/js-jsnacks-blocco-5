@@ -18,6 +18,12 @@
     padding: 10px;
     border: 1px solid black;
 }
+.entry {
+    display: inline-block;
+    background-color: red;
+    padding: 10px;
+    border: 1px solid black;
+}
 
 /* </1-fold> EEEEE ALL DOC CLASSES EEEEE */
 

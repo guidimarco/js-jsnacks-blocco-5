@@ -68,9 +68,6 @@ $("document").ready(function() {
     cloneSpan.text(bikeText); // insert the text
     $(".container").append(cloneSpan); // add to container
 
-
-
-
 });
 
 // <1-fold SSSSS ALL FUNCTION SSSSS
