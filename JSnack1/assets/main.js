@@ -31,28 +31,37 @@ $("document").ready(function() {
 
     console.log(bicycles);
 
-    // CYCLE VAR
-    var lessWeight = bicycles[0].weight // first bike weight
-    console.log(lessWeight);
+    // // VERSION 1 - CYCLE VAR
+    // var lessWeight = bicycles[0].weight // first bike weight
+    // console.log(lessWeight);
+    //
+    // // for cycle --> get the index of the bike that has less weight
+    // for (var i = 0; i < bicycles.length; i++) {
+    //     // CYCLE VAR
+    //     var lighterBikeIndex // current bike index
+    //     var currentBike = bicycles[i]; // current bike obj
+    //
+    //     // console.log(currentBike.weight);
+    //     if (currentBike.weight < lessWeight) {
+    //         lighterBikeIndex = i;
+    //         lessWeight = currentBike.weight;
+    //         // console.log(lighterBikeIndex);
+    //         // console.log(lessWeight);
+    //     }
+    //
+    // }
+    //
+    // // stamp the name of the bike that has less weight
+    // console.log("La bici che pesa meno è " + bicycles[lighterBikeIndex].name);
 
-    // for cycle --> get the index of the bike that has less weight
-    for (var i = 0; i < bicycles.length; i++) {
-        // CYCLE VAR
-        var lighterBikeIndex // current bike index
-        var currentBike = bicycles[i]; // current bike obj
+    // VERSION 2 - SORT THE ARRAY
+    bicycles.sort(compareWeight);
 
-        // console.log(currentBike.weight);
-        if (currentBike.weight < lessWeight) {
-            lighterBikeIndex = i;
-            lessWeight = currentBike.weight;
-            // console.log(lighterBikeIndex);
-            // console.log(lessWeight);
-        }
+    console.log(bicycles);
 
-    }
+    // stamp the first bike (now it has min weight)
+    console.log("La bici che pesa meno è " + bicycles[0].name + ".");
 
-    // stamp the name of the bike that has less weight
-    console.log("La bici che pesa meno è " + bicycles[lighterBikeIndex].name);
 
 
 
@@ -60,8 +69,17 @@ $("document").ready(function() {
 
 // <1-fold SSSSS ALL FUNCTION SSSSS
 
-// #2-fold SSSSS region SSSSS
+// #2-fold SSSSS compare the weight of the bike SSSSS
+function compareWeight(a, b) {
+    if (a.weight > b.weight) {
+        return +1;
+    } if (a.weight < b.weight) {
+        return -1;
+    } else {
+        return 0;
+    }
 
-// #/2-fold EEEEE endregion EEEEE
+}
+// #/2-fold EEEEE compare the weight of the bike EEEEE
 
 // </1-fold> EEEEE ALL FUNCTION EEEEE
