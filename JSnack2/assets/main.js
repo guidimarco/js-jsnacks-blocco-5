@@ -41,19 +41,6 @@ $("document").ready(function() {
 
     console.log(sliceName);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 });
 
 // <1-fold SSSSS ALL FUNCTION SSSSS
