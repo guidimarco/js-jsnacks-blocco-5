@@ -9,13 +9,22 @@ const askANumber = (array) => {
     return n;
 };
 
-function indexFiltrator(x, i) {
-    if (i >= this[0] && i <= this[1]) {
-        return true;
-    } else {
-        return false;
-    }
-};
+// function indexFiltrator(x, i) {
+//     if (i >= this[0] && i <= this[1]) {
+//         return true;
+//     } else {
+//         return false;
+//     }
+// };
+
+// const indexFiltrator = (array) => {
+//
+//     if (i >= this[0] && i <= this[1]) {
+//         return true;
+//     } else {
+//         return false;
+//     }
+// }
 
 // PART 1: define name array
 const names = ["Marco", "Francesca", "Francesco", "Antonio", "Carla", "Alberto"];
@@ -61,7 +70,14 @@ console.log(
 
 // 3 VERS 2.0 --> filter
 userNames = [];
-userNames = names.filter(indexFiltrator, userNumbers);
+
+userNames = names.filter( (x, i) => {
+    if (i >= userNumbers[0] && i <= userNumbers[1]) {
+        return true;
+    } else {
+        return false;
+    }
+}, userNumbers);
 userNamesString = userNames.join(" - "); // for stamp the output
 
 console.log(
