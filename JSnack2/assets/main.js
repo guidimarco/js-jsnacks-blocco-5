@@ -28,12 +28,18 @@ $("document").ready(function() {
     // console.log("Nomi scelti dall'utente:");
     // console.log(newArray);
 
-    // PART 3 - VERSION 2
-    // filter the names depending on the userNumbers
-    // filter the indexFiltrator function (see below) with userNumbers array argument
-    var filterName = names.filter(indexFiltrator, userNumbers);
+    // // PART 3 - VERSION 2: filter
+    // // filter the names depending on the userNumbers
+    // // filter the indexFiltrator function (see below) with userNumbers array argument
+    // var filterName = names.filter(indexFiltrator, userNumbers);
+    //
+    // console.log(filterName);
 
-    console.log(filterName);
+    // PART 3 - VERSION 3: slice
+    // slice the names array
+    var sliceName = names.slice(userNumbers[0], userNumbers[1] + 1)
+
+    console.log(sliceName);
 
 
 

@@ -26,26 +26,25 @@ $("document").ready(function() {
 
     console.log(bicycles);
 
-    // PART 2
+    // PART 2 - VERSION 1
     // copy --> copy of every bike with "position"
-    copyBicycles = [];
+    var copyBicycles = [];
 
     for (var i = 0; i < bicycles.length; i++) {
         var currentBike = bicycles[i];
-        // console.log(currentBike);
+        var currentCopyBike = {}; // create new obj for copy
 
-        // add a position property
-        currentBike.position = charGenerator();
-        // currentBike["position"] = "d"
+        // for-in-cycle for coping property in copy-obj
+        for (var key in currentBike) {
+            currentCopyBike[key] = currentBike[key];
+        }
+        currentCopyBike["position"] = charGenerator();
 
-
-        // push in an array
-        copyBicycles.push(currentBike);
+        copyBicycles.push(currentCopyBike);
     }
 
+    // stamp
     console.log(copyBicycles);
-
-
 
 
 

@@ -33,12 +33,13 @@ $("document").ready(function() {
 
     // // VERSION 1 - CYCLE VAR
     // var lessWeight = bicycles[0].weight // first bike weight
+    // var lighterBikeIndex = 0; // first bike index
+    //
     // console.log(lessWeight);
     //
     // // for cycle --> get the index of the bike that has less weight
     // for (var i = 0; i < bicycles.length; i++) {
     //     // CYCLE VAR
-    //     var lighterBikeIndex // current bike index
     //     var currentBike = bicycles[i]; // current bike obj
     //
     //     // console.log(currentBike.weight);
